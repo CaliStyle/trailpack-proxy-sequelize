@@ -1,0 +1,60 @@
+{
+  "name": "trailpack-proxy-sequelize",
+  "version": "2.0.0",
+  "description": "Proxy Engine Sequelize.js Trailpack http://sequelizejs.com",
+  "homepage": "https://cali-style.com",
+  "author": {
+    "name": "scott-wyatt",
+    "email": "scottwyatt86@gmail.com",
+    "url": "https://cali-style.com"
+  },
+  "contributors": [
+    {
+      "name": "Jaumard",
+      "url": "https://github.com/jaumard"
+    }
+  ],
+  "main": "index.js",
+  "keywords": [
+    "proxy engine",
+    "trailpack",
+    "trails",
+    "trailjs",
+    "sequelize",
+    "orm",
+    "datastore",
+    "database"
+  ],
+  "pre-commit": [
+    "test"
+  ],
+  "dependencies": {
+    "joi": "^10.1.0",
+    "lodash": "^4.17.3",
+    "sequelize": "^4.17.2",
+    "snyk": "^1.22.1",
+    "trailpack-datastore": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-trails": "^2.0.4",
+    "mocha": "^3.2.0",
+    "pg": "^7.3.0",
+    "pre-commit": "^1.2.2",
+    "smokesignals": "^2.1.1",
+    "sqlite3": "^3.1.13",
+    "trailpack-footprints": "^2.0.0",
+    "trailpack-router": "^2.1.1",
+    "trails": "^2.0.0"
+  },
+  "scripts": {
+    "test": "eslint --fix . && mocha"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "eslintConfig": {
+    "extends": "trails"
+  },
+  "repository": "https://github.com/calistyle/trailpack-proxy-sequelize"
+}
