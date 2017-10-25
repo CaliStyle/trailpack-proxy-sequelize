@@ -1,4 +1,3 @@
-/* eslint no-console: [0] */
 'use strict'
 
 const _ = require('lodash')
@@ -26,7 +25,6 @@ module.exports = class FootprintService extends Service {
    * @private
    */
   _getModel(modelName) {
-    console.log('Model Name', modelName)
     return this.app.orm[modelName] || this.app.packs['proxy-sequelize'].orm[modelName]
   }
 
@@ -61,7 +59,6 @@ module.exports = class FootprintService extends Service {
     fields.forEach((value, key) => {
       includes.push(model.associations[value])
     })
-    console.log('INCLUDES',includes, model)
 
     return includes
   }

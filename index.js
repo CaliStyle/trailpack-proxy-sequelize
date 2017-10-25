@@ -45,64 +45,14 @@ module.exports = class ProxySequelizeTrailpack extends Trailpack {
     this.app.orm = {}
     this.connections = lib.Transformer.transformStores(this.app)
     this.models = lib.Transformer.transformModels(this.app)
-    _.each(this.models, (model, modelName) => {
-      _.each(this.connections, (connection, name) => {
-        if (model.connection === name) {
-          // console.log('CONNECTION',connection)
-          // this.app.orm[model.globalId] = connection.define(modelName, model.schema, model.config)
 
-          const Model = connection.define(modelName, model.schema, model.config)
+    // Define the new models into Sequelize Models
+    lib.ProxySequelize.defineModels(this.app, this.models, this.connections)
 
-          Object.defineProperties(Model, {
-            app: {
-              enumerable: false,
-              value: this.app
-            }
-          })
+    // Transform the ORM
+    lib.ProxySequelize.transformOrm(this.app, this.orm, this.models)
 
-          Model.methods = model.methods
-          Model.methods.forEach(method => {
-            Model[method] = model[method]
-          })
-
-          // Migration to Version 2 Assistance
-          if (model.config) {
-            if (model.config.classMethods) {
-              this.app.config.log.logger.warn(`Sequelize v4 does not support class methods, proxy-sequelize ${modelName}.classMethods will be deprecated in v3`)
-              for (const methodName in model.config.classMethods) {
-                Model[methodName] = model.config.classMethods[methodName]
-              }
-            }
-
-            if (model.config.instanceMethods) {
-              this.app.config.log.logger.warn(`Sequelize v4 does not support instancec methods, proxy-sequelize ${modelName}.instanceMethods will be deprecated in v3`)
-              for (const methodName in model.config.instanceMethods) {
-                Model.prototype[methodName] = model.config.instanceMethods[methodName]
-              }
-            }
-          }
-
-          this.app.orm[model.globalId] = Model
-        }
-
-      })
-    })
-
-    _.each(this.models, (model, modelName) => {
-
-      // ignore model if not configured
-      if (!this.app.orm[model.globalId]) {
-        return
-      }
-
-      if (this.app.orm[model.globalId].associate) {
-        console.log('HAS ASSOCIATIONS', this.app.orm[model.globalId])
-        this.app.orm[model.globalId].associate(this.app.orm)
-      }
-
-      this.orm[model.globalId.toLowerCase()] = this.app.orm[model.globalId]
-    })
-
+    // Migrate the Schema of the new Models
     return lib.ProxySequelize.migrate(this.app, this.connections)
   }
 

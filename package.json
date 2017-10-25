@@ -39,7 +39,7 @@
     "eslint": "^3.12.2",
     "eslint-config-trails": "^2.0.4",
     "mocha": "^3.2.0",
-    "pg": "^7.3.0",
+    "pg": "^6.4.2",
     "pre-commit": "^1.2.2",
     "smokesignals": "^2.1.1",
     "sqlite3": "^3.1.13",
