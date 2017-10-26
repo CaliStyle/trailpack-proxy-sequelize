@@ -70,25 +70,6 @@ module.exports = class ProxySequelizeTrailpack extends Trailpack {
     )
   }
 
-  // migrate() {
-  //   const SchemaMigrationService = this.app.services.SchemaMigrationService
-  //   const database = this.app.config.database
-  //
-  //   if (database.models.migrate === 'none') return
-  //
-  //   return Promise.all(
-  //     _.map(this.connections, connection => {
-  //
-  //       if (database.models.migrate === 'drop') {
-  //         return SchemaMigrationService.dropDB(connection)
-  //       }
-  //       else if (database.models.migrate === 'alter') {
-  //         return SchemaMigrationService.alterDB(connection)
-  //       }
-  //     })
-  //   )
-  // }
-
   constructor(app) {
     super(app, {
       config: require('./config'),

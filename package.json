@@ -1,6 +1,6 @@
 {
   "name": "trailpack-proxy-sequelize",
-  "version": "2.0.0-beta",
+  "version": "2.1.0",
   "description": "Proxy Engine Sequelize.js Trailpack http://sequelizejs.com",
   "homepage": "https://cali-style.com",
   "author": {
