@@ -1,4 +1,5 @@
 # trailpack-proxy-sequelize
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/CaliStyle/trailpack-proxy-sequelize.svg?columns=all)](https://waffle.io/CaliStyle/trailpack-proxy-sequelize)
 
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![NPM version][npm-image]][npm-url]
@@ -115,8 +116,8 @@ information on how our projects are organized and how to get started.
 [snyk-url]: https://snyk.io/test/github/calistyle/trailpack-proxy-sequelize
 [npm-image]: https://img.shields.io/npm/v/trailpack-proxy-sequelize.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/trailpack-proxy-sequelize
-[ci-image]: https://img.shields.io/travis/calistyle/trailpack-proxy-sequelize/master.svg?style=flat-square
-[ci-url]: https://travis-ci.org/calistyle/trailpack-proxy-sequelize
+[ci-image]: https://img.shields.io/circleci/project/github/CaliStyle/trailpack-proxy-sequelize/master.svg
+[ci-url]: https://circleci.com/gh/CaliStyle/trailpack-proxy-sequelize/tree/master
 [daviddm-image]: http://img.shields.io/david/calistyle/trailpack-proxy-sequelize.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/calistyle/trailpack-proxy-sequelize
 [codeclimate-image]: https://img.shields.io/codeclimate/github/calistyle/trailpack-proxy-sequelize.svg?style=flat-square
